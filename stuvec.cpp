@@ -6,7 +6,7 @@ class student{
     public:
     student(string name1,int roll):name(name1),roll_no(roll){
     }
-    void print(){
+    void display(){
         cout<<"The student name="<<name<<".student roll no="<<roll_no<<endl;
     }
 };
@@ -24,6 +24,6 @@ int main(){
     }
      vector<student>::iterator ptr; 
     for( ptr=slist.begin();ptr !=slist.end();ptr++){
-            ptr->print();
+            ptr->dispaly();
     }
 }
