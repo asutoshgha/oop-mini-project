@@ -24,6 +24,6 @@ int main(){
     }
      vector<student>::iterator ptr; 
     for( ptr=slist.begin();ptr !=slist.end();ptr++){
-            ptr->dispaly();
+            ptr->display();
     }
 }
