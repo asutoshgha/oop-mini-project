@@ -18,24 +18,15 @@ ostream& operator<<(ostream& os, const student& s)
     return os;
 }
 template<typename T>
-void display(vector<T> x){
-     
-         for( auto ptr=x.begin();ptr!=x.end();ptr++){
-            cout<<*ptr;
+void display(T x){
+    auto itr=x.begin();
+    while(itr != x.end()){
+        cout<<*itr;
+        itr++;
     }
 }
 int main(){
-    vector<student> slist;
-    cout<<"enter no of students="<<endl;
-    int num;
-    cin>>num;
-    while(num--){
-        string name;
-        int roll;
-        cin>>name;
-        cin>>roll;
-        slist.push_back(student(name,roll));
-    }
-    display(slist);
-    
+    set<int> intset{2,3,1,4,5};
+    set<student> stuset{student("asutosh",14),student("advay",2),student("avinash",15)};
+    display(intset);
 }

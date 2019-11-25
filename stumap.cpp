@@ -14,28 +14,28 @@ class student{
 };
 ostream& operator<<(ostream& os, const student& s)
 {
-     os<<"The student name="<<s.name<<".student roll no="<<s.roll_no<<endl;
+     os<<"The student name:"<<s.name<<".student roll no="<<s.roll_no<<endl;
     return os;
 }
-template<typename T>
-void display(vector<T> x){
-     
-         for( auto ptr=x.begin();ptr!=x.end();ptr++){
-            cout<<*ptr;
-    }
-}
 int main(){
-    vector<student> slist;
+    map<string,student> list;
     cout<<"enter no of students="<<endl;
     int num;
     cin>>num;
     while(num--){
+        string email;
         string name;
         int roll;
+        cout<<"enter email"<<endl;
+        cin>>email;
+        cout<<"enter student name="<<endl;
         cin>>name;
+        cout<<"enter student roll="<<endl;
         cin>>roll;
-        slist.push_back(student(name,roll));
+        list.insert({email,student(name,roll)});
     }
-    display(slist);
-    
+    map<string,student>::iterator p;
+    for(p=list.begin();p!=list.end();p++){
+		cout<<p->first<<"="<<p->second;
+	}
 }
